@@ -49,43 +49,78 @@
         titleList: [
           {
             title: 'Uid',
-            key: 'uid'
+            key: 'uid',
+            align: 'center'
           },
           {
             title: '姓名',
-            key: 'name'
+            key: 'name',
+            align: 'center'
           },
           {
             title: '邮箱',
-            key: 'eMail'
+            key: 'eMail',
+            align: 'center'
           },
           {
             title: '性别',
-            key: 'sex'
+            key: 'sex',
+            align: 'center'
           },
           {
             title: '注册时间',
-            key: 'date'
+            key: 'date',
+            align: 'center'
           },
           {
             title: '关注数',
-            key: 'follow'
+            key: 'follow',
+            align: 'center'
           },
           {
             title: '好友数',
-            key: 'friend'
+            key: 'friend',
+            align: 'center'
           },
           {
             title: '被关注数',
-            key: 'star'
+            key: 'star',
+            align: 'center'
           },
           {
             title: '状态',
-            key: 'status'
+            key: 'status',
+            align: 'center'
           },
           {
             title: '操作',
-            key: 'option'
+            key: 'action',
+            align: 'center',
+            render: h => {
+              return h('div', [
+                h('Button', {
+                  props: {
+                    type: 'error',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {}
+                  }
+                }, '冻结'),
+                h('Button', {
+                  props: {
+                    type: 'success',
+                    size: 'small'
+                  },
+                  on: {
+                    click: () => {}
+                  }
+                }, '解冻')
+              ])
+            }
           }
         ],
         memberList: [
@@ -98,8 +133,8 @@
             follow: '12',
             friend: '3',
             star: '21',
-            status: '正常',
-            option: '冻结'
+            status: '正常'
+//            action: '冻结'
           },
           {
             uid: '123322',
@@ -110,8 +145,8 @@
             follow: '22',
             friend: '4',
             star: '31',
-            status: '正常',
-            option: '冻结'
+            status: '正常'
+//            action: '冻结'
           }
         ]
       }

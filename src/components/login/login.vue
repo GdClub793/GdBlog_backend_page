@@ -16,9 +16,7 @@
             </Input>
           </FormItem>
           <FormItem>
-            <router-link tag="div" :to="routerTo">
-              <Button type="primary" @click="handleSubmit('login')" long>登录</Button>
-            </router-link>
+            <Button type="primary" @click="handleSubmit('login')" long>登录</Button>
           </FormItem>
         </Form>
       </div>
@@ -58,8 +56,7 @@
               trigger: 'blur'
             }
           ]
-        },
-        routerTo: ''
+        }
       }
     },
     components: {
@@ -70,8 +67,7 @@
         this.$refs[name].validate(valid => {
           if (valid) {
             this.$Message.success('提交成功!')
-            this.routerTo = '/backend-manager'
-//            this.$router.push('/backend-manager')
+            this.$router.push('/backend-manager/monster')
           } else {
             this.$Message.error('验证失败!')
           }
