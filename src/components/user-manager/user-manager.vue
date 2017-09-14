@@ -25,6 +25,7 @@
           <Option v-for="item in status" :value="item" :key="item">{{ item }}</Option>
         </Select>
         <Button type="default" size="small" style="width: 60px;">查找</Button>
+        <Button type="default" size="small" style="width: 60px;">添加</Button>
       </div>
       <div class="user-content">
         <Table stripe border size="small" width="1400" :columns="titleList" :data="memberList"></Table>
@@ -151,6 +152,7 @@
         ]
       }
     }
+
   }
 </script>
 
