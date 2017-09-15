@@ -10,10 +10,11 @@ module.exports = {
     browser: true,
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'standard',
+  extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
-    'html'
+    'vue',
+    'html',
   ],
   // add your custom rules here
   'rules': {
@@ -22,6 +23,6 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
   }
 }

@@ -25,7 +25,7 @@
           <Option v-for="item in status" :value="item" :key="item">{{ item }}</Option>
         </Select>
         <Button type="default" size="small" style="width: 60px;">查找</Button>
-        <Button type="default" size="small" style="width: 60px;">添加</Button>
+        <Button type="default" size="small" style="width: 60px;" v-on:click="addUser">添加</Button>
       </div>
       <div class="user-content">
         <Table stripe border size="small" width="1400" :columns="titleList" :data="memberList"></Table>
@@ -36,8 +36,8 @@
 
 <script>
   export default {
-    data () {
-      return {
+    data(){
+      return{
         username: '',
         eMail: '',
         Uid: '',
@@ -134,8 +134,8 @@
             follow: '12',
             friend: '3',
             star: '21',
-            status: '正常'
-//            action: '冻结'
+            status: '正常',
+            // action: '冻结',
           },
           {
             uid: '123322',
@@ -146,14 +146,13 @@
             follow: '22',
             friend: '4',
             star: '31',
-            status: '正常'
-//            action: '冻结'
-          }
-        ]
-      }
+            status: '正常',
+            // action: '冻结'
+          },
+        ],
+      },
     }
-
-  }
+  };
 </script>
 
 <style scoped lang="scss">

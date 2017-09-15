@@ -15,18 +15,18 @@
 <script>
   export default {
     props: {
-      managements: Array
+      managements: Array,
     },
-    data () {
+    data() {
       return {
-      }
+      };
     },
     methods: {
-      _select (name) {
-        this.$router.push(name)
-      }
-    }
-  }
+      _select(name) {
+        this.$router.push(name);
+      },
+    },
+  };
 </script>
 
 <style scoped lang="scss">
