@@ -5,19 +5,19 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
+      data() {
+          return {
 
-            };
-        },
-        mounted() {
+          };
+      },
+      mounted() {
 
-        },
-        beforeDestroy() {
+      },
+      beforeDestroy() {
 
-        },
-        methods: {
+      },
+      methods: {
 
-        }
+      }
     };
 </script>

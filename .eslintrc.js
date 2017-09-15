@@ -1,4 +1,4 @@
-{
+module.exports = {
     "root": true,
     "parserOptions": {
         "ecmaVersion": 6,
@@ -7,14 +7,14 @@
     "env": {
         "browser": true
     },
-    "extends": "eslint:recommended",
-    "plugins": ["html"],
+    "extends": "airbnb",
+    "plugins": ["html", "vue"],
     "rules": {
         "indent": ["error", 4, {
             "SwitchCase": 1
         }],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
-        "no-console": ["error"]
+        "no-console": ["error"],
     }
 }
