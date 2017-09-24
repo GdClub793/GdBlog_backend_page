@@ -1,58 +1,49 @@
-<style scoped>
-    .index {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        text-align: center;
-    }
-
-    .index h1 {
-        height: 150px;
-    }
-
-    .index h1 img {
-        height: 100%;
-    }
-
-    .index h2 {
-        color: #666;
-        margin-bottom: 200px;
-    }
-
-    .index h2 p {
-        margin: 0 0 50px;
-    }
-
-    .index .ivu-row-flex {
-        height: 100%;
-    }
-</style>
-<template>
-    <div class="index">
-        <Row type="flex" justify="center" align="middle">
-            <Col span="24">
-                <h1>
-                    <img src="https://raw.githubusercontent.com/iview/iview/master/assets/logo.png">
-                </h1>
-                <h2>
-                    <p>Welcome to your iView app!</p>
-                    <Button type="ghost" @click="handleStart">Start iView</Button>
-                </h2>
-            </Col>
-        </Row>
-    </div>
-</template>
 <script>
-    export default {
-        methods: {
-            handleStart() {
-                this.$Modal.info({
-                    title: 'Bravo',
-                    content: 'Now, enjoy the convenience of iView.'
-                });
-            }
-        }
-    };
+  import {Row, Col, Card, Form, FormItem, Input, Icon, Button} from 'iview';
+
+  export default {
+    methods: {
+      handleStart() {
+        this.$Modal.info({
+          title: 'Bravo',
+          content: 'Now, enjoy the convenience of iView.',
+        });
+      },
+    },
+    render(h) { // eslint-disable-line no-unused-vars
+
+      return (
+        <Card class="login-box">
+          <Form>
+            <h1>GDBlog后台管理系统</h1>
+            <Row>
+              <Col span="12" offset="6">
+                <FormItem prop="user">
+                  <Input type="text" placeholder="Username">
+                    <Icon type="ios-person-outline" slot="prepend" />
+                  </Input>
+                </FormItem>
+              </Col>
+            </Row>
+            <Row>
+              <Col span="12" offset="6">
+                <FormItem prop="password">
+                  <Input type="password" placeholder="Password">
+                    <Icon type="ios-locked-outline" slot="prepend" />
+                  </Input>
+                </FormItem>
+              </Col>
+            </Row>
+            <Row>
+              <Col span="12" offset="6">
+                <FormItem>
+                  <Button type="primary" long>登录</Button>
+                </FormItem>
+              </Col>
+            </Row>
+          </Form>
+        </Card>
+      );
+    },
+  };
 </script>

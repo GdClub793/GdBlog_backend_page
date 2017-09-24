@@ -6,6 +6,7 @@ import 'iview/dist/styles/iview.css';
 import Routers from './router';
 import Util from './libs/util';
 import App from './app.vue';
+import './common/css/common.css';
 
 
 Vue.use(VueRouter);
@@ -48,7 +49,6 @@ const store = new Vuex.Store({
   },
 });
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
