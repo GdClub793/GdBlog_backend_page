@@ -35,7 +35,12 @@
     methods: {
       handleLogin(){
         console.log(this);
-        this.$router.push('/home')
+        //call login interface here
+        this.$router.push('/home');
+        let config = {
+          content: '登陆成功，欢迎您XXX！',
+        };
+        this.$Message.success(config)
       }
     }
   };

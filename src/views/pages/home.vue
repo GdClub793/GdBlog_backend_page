@@ -16,9 +16,12 @@
 </template>
 <script >
 import {Row, Col} from 'iview';
-import sysHeader from '../components/header.vue';
-import sysSideBar from '../components/sideBar';
+import sysHeader from '../components/common/header.vue';
+import sysSideBar from '../components/common/sideBar';
 export default {
+	mounted(){
+
+	},
 	components: {
 		sysHeader,
 		sysSideBar,
