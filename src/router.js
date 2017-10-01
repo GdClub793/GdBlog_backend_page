@@ -3,6 +3,8 @@ const login = r => require.ensure([], () => r(require('./views/pages/login')),'l
 const home = r => require.ensure([], () => r(require('./views/pages/home')),'home');
 const chart = r => require.ensure([], () => r(require('./views/components/home/chart')),'chart');
 const menuManage = r => require.ensure([], () => r(require('./views/components/home/menuManage')),'menuManage');
+const userManage = r => require.ensure([], () => r(require('./views/components/home/userManage')),'userManage');
+const roleManage = r => require.ensure([], () => r(require('./views/components/home/roleManage')),'roleManage');
 const routers = [{
     path: '/',
     meta: {
@@ -25,6 +27,14 @@ const routers = [{
       {
         path: '/menuManage',
         component: menuManage
+      },
+      {
+        path: '/userManage',
+        component: userManage
+      },
+      {
+        path: '/roleManage',
+        component: roleManage
       }
     ]
 }];

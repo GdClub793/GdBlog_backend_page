@@ -1,6 +1,6 @@
 <template>
 	<div class="sysSideBar">
-		<Menu @on-select="jumpToRoute" :theme="theme" width="auto" :open-names="['1']" active-name="{this.$router.path}">
+		<Menu @on-select="jumpToRoute" :theme="theme" width="auto" :open-names="open" :active-name="active" ref="sidebar">
 			<Submenu name="1">
 				<template slot="title">
 			  	<Icon type="stats-bars"></Icon>
@@ -31,23 +31,41 @@
 </template>
 <script >
 	let routeName = {
-		'1-1': 'dataStatistic',
-		'2-1': 'menuManage',
-		'2-2': 'menuManage',
-		'2-3': 'menuManage'
-	};
+	 '1-1': '/dataStatistic',
+	 '2-1': '/menuManage',
+	 '2-2': '/userManage',
+	 '2-3': '/roleManage'
+ 	};
 	export default {
 		data() {
       return {
-          theme: 'dark'
-      }
+        theme: 'dark',
+				open: [''],
+				active: ''
+			}
     },
-		createdn() 	{
+		mounted(){
+			this.changeActiveName();
+			this.$nextTick(function () {
+				this.$refs.sidebar.updateActiveName();
+				this.$refs.sidebar.updateOpened();
+
+  		})
 		},
 		methods: {
 			jumpToRoute: function(name){
-				this.$router.push('/' + routeName[name]);
+				this.$router.push(routeName[name]);
 			},
+			changeActiveName: function(){
+				let arr = [];
+				for(var name in routeName){
+					if(this.$route.path === routeName[name]){
+						this.active = name;
+						arr.push(name.split('-')[0]);
+						this.open = arr;
+					}
+				}
+			}
 		}
   };
 </script>

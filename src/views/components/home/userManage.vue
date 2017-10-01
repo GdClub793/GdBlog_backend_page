@@ -1,6 +1,6 @@
 <template>
 	<div>
-	menuManage
+	userManage
 	</div>
 </template>
 <script >
