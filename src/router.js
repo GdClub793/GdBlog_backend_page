@@ -1,8 +1,31 @@
+//import App from './app';
+const login = r => require.ensure([], () => r(require('./views/pages/login')),'login');
+const home = r => require.ensure([], () => r(require('./views/pages/home')),'home');
+const chart = r => require.ensure([], () => r(require('./views/components/home/chart')),'chart');
+const menuManage = r => require.ensure([], () => r(require('./views/components/home/menuManage')),'menuManage');
 const routers = [{
-  path: '/',
-  meta: {
-    title: '',
+    path: '/',
+    meta: {
+      title: 'GD后台管理系统-登陆',
+    },
+    component: login,
   },
-  component: resolve => require(['./views/index.vue'], resolve),
+  {
+    path: '/home',
+    redirect: '/dataStatistic',
+    meta: {
+      title: 'GD后台管理系统',
+    },
+    component: home,
+    children: [
+      {
+        path: '/dataStatistic',
+        component: chart
+      },
+      {
+        path: '/menuManage',
+        component: menuManage
+      }
+    ]
 }];
 export default routers;
