@@ -5,8 +5,8 @@
       <Row>
         <Col span="12" offset="6">
           <FormItem prop="user">
-            <Input type="text" placeholder="Username">
-              <Icon type="ios-person-outline" slot="prepend" />
+            <Input type="text" placeholder="Username" size="large">
+              <Icon type="person" slot="prepend" />
             </Input>
           </FormItem>
         </Col>
@@ -14,8 +14,8 @@
       <Row>
         <Col span="12" offset="6">
           <FormItem prop="password">
-            <Input type="password" placeholder="Password">
-              <Icon type="ios-locked-outline" slot="prepend" />
+            <Input type="password" placeholder="Password" size="large">
+              <Icon type="locked" slot="prepend" />
             </Input>
           </FormItem>
         </Col>
@@ -31,8 +31,6 @@
   </Card>
 </template>
 <script>
-  import {Row, Col, Card, Form, FormItem, Input, Icon, Button} from 'iview';
-
   export default {
     methods: {
       handleLogin(){
